@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GrainPalette - Rice Classifier</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #d0f0c0, #b0e0e6);
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            color: #2b2b2b;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: slideUp 1.2s ease-in-out;
+        }
+        input[type="file"] {
+            padding: 10px;
+            margin: 15px;
+        }
+        input[type="submit"] {
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🍚 Rice Type Classifier</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
